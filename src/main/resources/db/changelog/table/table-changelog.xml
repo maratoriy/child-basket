@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <include file="ingredient/ingredient.sql" relativeToChangelogFile="true"/>
+    <include file="allergen/allergen.sql" relativeToChangelogFile="true"/>
+    <include file="parent/parent.sql" relativeToChangelogFile="true"/>
+    <include file="child/child.sql" relativeToChangelogFile="true"/>
+    <include file="dish_type/dish_type.sql" relativeToChangelogFile="true"/>
+    <include file="dish/dish.sql" relativeToChangelogFile="true"/>
+    <include file="subscription_plan/subscription_plan.sql" relativeToChangelogFile="true"/>
+    <include file="address/address.sql" relativeToChangelogFile="true"/>
+    <include file="delivery_status/delivery_status.sql" relativeToChangelogFile="true"/>
+    <include file="subscription/subscription.sql" relativeToChangelogFile="true"/>
+    <include file="customer_order/customer_order.sql" relativeToChangelogFile="true"/>
+    <include file="review/review.sql" relativeToChangelogFile="true"/>
+    <include file="dish_ingredients/dish_ingredients.sql" relativeToChangelogFile="true"/>
+    <include file="dish_allergens/dish_allergens.sql" relativeToChangelogFile="true"/>
+    <include file="order_dishes/order_dishes.sql" relativeToChangelogFile="true"/>
+
+    <changeSet author="moratorium" id="insert_base_menu">
+        <sqlFile path="insert.sql" relativeToChangelogFile="true" splitStatements="false"/>
+    </changeSet>
+
+</databaseChangeLog>

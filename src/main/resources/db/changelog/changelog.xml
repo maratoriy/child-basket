@@ -1,0 +1,14 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <include file="table/table-changelog.xml" relativeToChangelogFile="true"/>
+    <changeSet author="moratorium" id="triggers_create">
+        <sqlFile path="triggers/triggers.sql" relativeToChangelogFile="true" splitStatements="false"/>
+    </changeSet>
+    <changeSet author="moratorium" id="functions_create">
+        <sqlFile path="functions/functions.sql" relativeToChangelogFile="true" splitStatements="false"/>
+    </changeSet>
+</databaseChangeLog>

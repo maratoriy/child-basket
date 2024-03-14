@@ -71,11 +71,11 @@ public class CustomerOrderService {
 
         orderRepository.save(customerOrder);
 
-        if(subscription.getMealLeft() == 1) {
+        subscription.setMealLeft(subscription.getMealLeft() - 1);
+
+        if(subscription.getMealLeft() == 0) {
             subscription.setEndDate(now);
         }
-
-        subscription.setMealLeft(subscription.getMealLeft() - 1);
 
         subscriptionRepository.save(subscription);
     }

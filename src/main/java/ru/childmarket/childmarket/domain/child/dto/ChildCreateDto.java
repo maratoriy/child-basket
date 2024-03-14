@@ -8,7 +8,6 @@ import ru.childmarket.childmarket.domain.parent.Parent;
 
 @Data
 public class ChildCreateDto {
-
     @NotEmpty
     private final String name;
 

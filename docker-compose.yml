@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: childmarket
+      POSTGRES_USER: childmarket
+      POSTGRES_PASSWORD: childmarket
+    ports:
+      - 5432:5432
+  child-basket:
+    image: artyomkiushkin/child-basket:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/childmarket
+      - SPRING_DATASOURCE_USERNAME=childmarket
+      - SPRING_DATASOURCE_PASSWORD=childmarket

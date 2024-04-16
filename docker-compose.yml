@@ -6,8 +6,6 @@ services:
       POSTGRES_DB: childmarket
       POSTGRES_USER: childmarket
       POSTGRES_PASSWORD: childmarket
-    ports:
-      - 5432:5432
   child-basket:
     image: artyomkiushkin/child-basket:latest
     build:

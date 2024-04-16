@@ -1,7 +1,5 @@
 package ru.childbasket.domain.address;
 
-import java.util.List;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.childbasket.domain.address.dto.AddressCreateDto;
 import ru.childbasket.domain.address.dto.AddressResponseDto;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = {"/api/parent/addresses"},

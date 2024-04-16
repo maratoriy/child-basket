@@ -1,20 +1,20 @@
 package ru.childbasket.domain.subscription;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.childbasket.domain.child.Child;
+import ru.childbasket.domain.child.ChildRepository;
+import ru.childbasket.domain.parent.exceptions.ParentNotExistsException;
 import ru.childbasket.domain.subscription.dto.SubscriptionCreateDto;
 import ru.childbasket.domain.subscription.dto.SubscriptionResponseDto;
 import ru.childbasket.domain.subscription_plan.SubscriptionPlan;
 import ru.childbasket.domain.subscription_plan.SubscriptionPlanMapper;
 import ru.childbasket.domain.subscription_plan.SubscriptionPlanRepository;
 import ru.childbasket.domain.subscription_plan.dto.SubscriptionPlanResponseDto;
-import ru.childbasket.domain.child.Child;
-import ru.childbasket.domain.child.ChildRepository;
-import ru.childbasket.domain.parent.exceptions.ParentNotExistsException;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -31,7 +31,7 @@ public class SubscriptionService {
 
     public List<SubscriptionResponseDto> getSubscriptions(String phoneNumber, Long childId) {
         final Child child = childRepository.findById(childId).orElseThrow();
-        if(!child.getParent().getPhoneNumber().equals(phoneNumber)) {
+        if (!child.getParent().getPhoneNumber().equals(phoneNumber)) {
             throw new ParentNotExistsException(phoneNumber);
         }
         return child.getSubscriptions().stream()
@@ -42,7 +42,7 @@ public class SubscriptionService {
     @Transactional
     public void subscribe(String phoneNumber, SubscriptionCreateDto subscriptionCreateDto) {
         final Child child = childRepository.findById(subscriptionCreateDto.getChildId()).orElseThrow();
-        if(!child.getParent().getPhoneNumber().equals(phoneNumber)) {
+        if (!child.getParent().getPhoneNumber().equals(phoneNumber)) {
             throw new ParentNotExistsException(phoneNumber);
         }
 

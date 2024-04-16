@@ -1,27 +1,27 @@
 package ru.childbasket.domain.customer_order;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.childbasket.domain.address.AddressRepository;
 import ru.childbasket.domain.customer_order.dto.CustomerOrderCreateDto;
+import ru.childbasket.domain.customer_order.dto.CustomerOrderResponseDto;
 import ru.childbasket.domain.customer_order.exceptions.FailedToCreateOrderException;
 import ru.childbasket.domain.delivery_status.DeliveryStatusRepository;
-import ru.childbasket.domain.address.AddressRepository;
-import ru.childbasket.domain.customer_order.dto.CustomerOrderResponseDto;
 import ru.childbasket.domain.dish.DishRepository;
 import ru.childbasket.domain.parent.exceptions.ParentNotExistsException;
 import ru.childbasket.domain.subscription.Subscription;
 import ru.childbasket.domain.subscription.SubscriptionRepository;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class CustomerOrderService {
-    private static Long PENDING_STATUS_ID = 1L;
+    private static final Long PENDING_STATUS_ID = 1L;
     private final CustomerOrderRepository orderRepository;
     private final SubscriptionRepository subscriptionRepository;
     private final DeliveryStatusRepository deliveryStatusRepository;
@@ -70,7 +70,7 @@ public class CustomerOrderService {
 
         subscription.setMealLeft(subscription.getMealLeft() - 1);
 
-        if(subscription.getMealLeft() == 0) {
+        if (subscription.getMealLeft() == 0) {
             subscription.setEndDate(now);
         }
 

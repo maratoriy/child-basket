@@ -1,8 +1,8 @@
 package ru.childbasket.domain.subscription.dto;
 
-import java.sql.Timestamp;
-
 import lombok.Data;
+
+import java.sql.Timestamp;
 
 @Data
 public class SubscriptionCreateDto {

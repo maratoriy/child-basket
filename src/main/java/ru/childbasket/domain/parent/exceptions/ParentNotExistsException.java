@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Getter
 public class ParentNotExistsException extends EntityNotFoundException {
     private final String phoneNumber;
+
     public ParentNotExistsException(String phoneNumber) {
         super(String.format("Parent with phone number %s not exists", phoneNumber));
         this.phoneNumber = phoneNumber;

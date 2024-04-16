@@ -2,8 +2,6 @@ package ru.childbasket.domain.parent.dto;
 
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
 @Data
 public class ParentRegisterDto {

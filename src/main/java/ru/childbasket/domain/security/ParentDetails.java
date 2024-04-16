@@ -1,9 +1,5 @@
 package ru.childbasket.domain.security;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -12,6 +8,10 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.childbasket.domain.parent.Parent;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 @Getter
 @AllArgsConstructor

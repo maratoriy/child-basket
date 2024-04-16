@@ -1,10 +1,10 @@
 package ru.childbasket.domain.subscription.dto;
 
-import java.sql.Timestamp;
-
 import lombok.Data;
-import ru.childbasket.domain.subscription_plan.SubscriptionPlan;
 import ru.childbasket.domain.child.Child;
+import ru.childbasket.domain.subscription_plan.SubscriptionPlan;
+
+import java.sql.Timestamp;
 
 @Data
 public class SubscriptionResponseDto {

@@ -8,5 +8,6 @@ import ru.childbasket.domain.child.dto.ChildResponseDto;
 public interface ChildMapper {
 
     ChildResponseDto map(Child child);
+
     Child map(ChildCreateDto childCreateDto);
 }

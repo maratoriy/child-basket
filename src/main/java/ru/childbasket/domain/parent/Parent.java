@@ -1,25 +1,17 @@
 package ru.childbasket.domain.parent;
 
-import java.sql.Timestamp;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import ru.childbasket.domain.address.Address;
+import ru.childbasket.domain.child.Child;
 import ru.childbasket.domain.review.Review;
 import ru.childbasket.domain.subscription.Subscription;
-import ru.childbasket.domain.child.Child;
+
+import java.sql.Timestamp;
+import java.util.List;
 
 @Data
 @AllArgsConstructor

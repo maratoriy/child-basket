@@ -1,9 +1,9 @@
 package ru.childbasket.domain.customer_order.dto;
 
+import lombok.Data;
+
 import java.sql.Timestamp;
 import java.util.List;
-
-import lombok.Data;
 
 @Data
 public class CustomerOrderCreateDto {

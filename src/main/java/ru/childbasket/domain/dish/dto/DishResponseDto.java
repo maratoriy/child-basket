@@ -1,10 +1,10 @@
 package ru.childbasket.domain.dish.dto;
 
-import java.util.Set;
-
 import lombok.Data;
 import ru.childbasket.domain.allergen.dto.AllergenResponseDto;
 import ru.childbasket.domain.ingredient.dto.IngredientResponseDto;
+
+import java.util.Set;
 
 @Data
 public class DishResponseDto {

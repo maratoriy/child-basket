@@ -10,6 +10,8 @@ services:
       - 5432:5432
   child-basket:
     image: artyomkiushkin/child-basket:latest
+    build:
+      context: .
     ports:
       - 8080:8080
     depends_on:

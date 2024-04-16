@@ -1,12 +1,12 @@
 package ru.childbasket.domain.dish;
 
-import java.util.stream.Collectors;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import ru.childbasket.domain.allergen.AllergenMapper;
 import ru.childbasket.domain.dish.dto.DishResponseDto;
 import ru.childbasket.domain.ingredient.IngredientMapper;
+
+import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor

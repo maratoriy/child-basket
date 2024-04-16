@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 @Getter
 public class ParentAlreadyExistsException extends PersistenceException {
     private final String phoneNumber;
+
     public ParentAlreadyExistsException(String phoneNumber) {
         super(String.format("Parent with phone number %s already exists", phoneNumber));
         this.phoneNumber = phoneNumber;
